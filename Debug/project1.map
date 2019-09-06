@@ -1,0 +1,175 @@
+******************************************************************************
+                  TI ARM Linker PC v18.1.1                     
+******************************************************************************
+>> Linked Thu Jun 21 09:57:52 2018
+
+OUTPUT FILE NAME:   <project1.out>
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 00000e11
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  00000e9a  0003f166  R  X
+  SRAM                  20000000   00008000  00000200  00007e00  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00000e9a   00000e9a    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00000be8   00000be8    r-x .text
+  00000e54    00000e54    00000046   00000046    r-- .const
+20000000    20000000    00000200   00000000    rw-
+  20000000    20000000    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    00000be8     
+                  0000026c    00000ab0     BrazoLib.obj (.text)
+                  00000d1c    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  00000db8    00000058     main.obj (.text)
+                  00000e10    00000030     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noinit_noargs:_c_int00_noinit_noargs)
+                  00000e40    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
+                  00000e4c    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00000e50    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    00000e54    00000046     
+                  00000e54    0000002b     BrazoLib.obj (.const:.string:$P$T0$1)
+                  00000e7f    0000001b     main.obj (.const:.string:$P$T0$1)
+
+.cinit     0    00000000    00000000     UNINITIALIZED
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.stack     0    20000000    00000200     UNINITIALIZED
+                  20000000    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20000004    000001fc     --HOLE--
+
+MODULE SUMMARY
+
+       Module                         code   ro data   rw data
+       ------                         ----   -------   -------
+    .\
+       BrazoLib.obj                   2736   43        0      
+       tm4c123gh6pm_startup_ccs.obj   12     620       0      
+       main.obj                       88     27        0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         2836   690       0      
+                                                              
+    C:\ti\ccs800\ccsv8\tools\compiler\ti-cgt-arm_18.1.1.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       memcpy_t2.asm.obj              156    0         0      
+       boot_cortex_m.c.obj            48     0         0      
+       exit.c.obj                     4      0         0      
+       pre_init.c.obj                 4      0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         212    0         0      
+                                                              
+       Stack:                         0      0         512    
+    +--+------------------------------+------+---------+---------+
+       Grand Total:                   3048   690       512    
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                  
+-------   ----                  
+00000e51  C$$EXIT               
+0000091b  ConfigTx              
+0000048d  ConfigUART            
+00000a5b  ControlBrazo1         
+00000cb1  ControlBrazo2         
+0000085f  LecturaPulsadores1    
+00000a73  LecturaPulsadores2    
+00000841  LedEnc                
+0000061d  MoverBrazo            
+000002db  PWM_PD1_PD0_PC4       
+00000515  Read                  
+00000e41  ResetISR              
+00000a3f  Send                  
+20000200  __STACK_END           
+00000200  __STACK_SIZE          
+20000200  __STACK_TOP           
+ffffffff  __TI_pprof_out_hndl   
+ffffffff  __TI_prof_data_size   
+ffffffff  __TI_prof_data_start  
+00000000  __TI_static_base__    
+00000d1d  __aeabi_memcpy        
+00000d1d  __aeabi_memcpy4       
+00000d1d  __aeabi_memcpy8       
+ffffffff  __binit__             
+ffffffff  __c_args__            
+UNDEFED   __mpu_init            
+20000000  __stack               
+00000e11  _c_int00_noinit_noargs
+00000e4d  _system_pre_init      
+00000e51  abort                 
+00000b25  accionarMotor         
+ffffffff  binit                 
+0000026d  config_led            
+00000000  g_pfnVectors          
+00000db9  main                  
+00000d1d  memcpy                
+00000559  new_DC_PC4            
+00000525  new_DC_PD0            
+0000053f  new_DC_PD1            
+000002bd  turn_on_led           
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                  
+-------   ----                  
+00000000  __TI_static_base__    
+00000000  g_pfnVectors          
+00000200  __STACK_SIZE          
+0000026d  config_led            
+000002bd  turn_on_led           
+000002db  PWM_PD1_PD0_PC4       
+0000048d  ConfigUART            
+00000515  Read                  
+00000525  new_DC_PD0            
+0000053f  new_DC_PD1            
+00000559  new_DC_PC4            
+0000061d  MoverBrazo            
+00000841  LedEnc                
+0000085f  LecturaPulsadores1    
+0000091b  ConfigTx              
+00000a3f  Send                  
+00000a5b  ControlBrazo1         
+00000a73  LecturaPulsadores2    
+00000b25  accionarMotor         
+00000cb1  ControlBrazo2         
+00000d1d  __aeabi_memcpy        
+00000d1d  __aeabi_memcpy4       
+00000d1d  __aeabi_memcpy8       
+00000d1d  memcpy                
+00000db9  main                  
+00000e11  _c_int00_noinit_noargs
+00000e41  ResetISR              
+00000e4d  _system_pre_init      
+00000e51  C$$EXIT               
+00000e51  abort                 
+20000000  __stack               
+20000200  __STACK_END           
+20000200  __STACK_TOP           
+ffffffff  __TI_pprof_out_hndl   
+ffffffff  __TI_prof_data_size   
+ffffffff  __TI_prof_data_start  
+ffffffff  __binit__             
+ffffffff  __c_args__            
+ffffffff  binit                 
+UNDEFED   __mpu_init            
+
+[40 symbols]
